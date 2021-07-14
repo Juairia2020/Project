@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    grid-template-areas: 
+    "head head"
+    "desc clar"
+    "feat feat"
+    "price price"
+    "base prem"
+    "foot foot"
+    ;
+}
+button{
+    cursor: pointer;
+}
+p{
+    font-family: 'Playfair Display', serif;
+    line-height: 30px;
+    font-size: 1.4rem;
+}
+span{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    padding: 5px;
+}
+.head{
+    grid-area: head;
+    background-image: url("photo.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    height: 125vh;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: 
+    "container btn"
+    ;
+}
+.head-btn{
+    display: none;
+}
+.container{
+    grid-area: container;
+}
+.card{
+    width: 35%;
+    margin: 10% 2%;
+    text-align: center;
+    border-radius: 25px;
+    padding: 1.5rem;
+    color: white;
+    background-color: black;
+    opacity: 0.7;
+    transition: opacity 1s;
+}
+.card:hover{
+    opacity: 1;
+}
+.card > p{
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+.card > button{
+    font-size: large;
+    background-color: darkkhaki;
+    border: none;
+    color: white;
+    padding: 5px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+.card > button:hover{
+    background-color: gainsboro;
+    color: black;
+}
+.btn{
+    grid-area: btn;
+    background-color: black;
+    margin-top: 65vh;
+    margin-right: 2vw;
+    padding: 1rem;
+    height: 12%;
+}
+.btn > a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+.btn:hover{
+    background-color: gainsboro;
+}
+.btn:hover>a{
+    color: #000;
+}
+.description{
+    grid-area: desc;
+    padding: 2rem;
+}
+h1{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 5rem;
+    padding: 10px 0px;
+}
+h2{
+    color: #813c23;
+    font-size: 2rem;
+    padding: 20px 0px;
+}
+.description > button{
+    margin: 5%;
+    padding: 3%;
+    font-size: larger;
+    border: none;
+    background-color: darkkhaki;
+}
+.description > button:hover{
+    background-color: gray;
+    color: white;
+}
+.clarity{
+    grid-area: clar;
+    background-color: burlywood;
+    padding: 2rem;
+    color: cornsilk;
+}
+.features{
+    grid-area: feat;
+    text-align: center;
+    background-color: gray;
+    color: honeydew;
+}
+.icons{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+    'a b c d';
+}
+.icons_a{grid-area: a;}
+.icons_b{grid-area: b;}
+.icons_c{grid-area: c;}
+.icons_d{grid-area: d;}
+
+h5{
+   font-size: 1.5rem;
+}
+.icons div{
+    font-size: 4rem;
+    margin: 3rem 0;
+}
+.icons p{
+    color: white;
+}
+.pricing{
+    grid-area: price;
+    background-color: white;
+    text-align: center;
+    color: #813c23;
+    margin: 3%;
+}
+.card_p{
+    margin: 5%;
+    box-shadow: 4px 4px 4px grey;
+    padding: 1rem;
+    background-color: burlywood;
+    color: #813c23;
+}
+.card_p:hover{
+    box-shadow: 8px 8px 8px gray;
+}
+.head_p{
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+.content_p{
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+.content_p p{
+    padding: 0.5rem;
+}
+.grey{
+    font-size: 2rem;
+    color: gray;
+    margin-bottom: 1rem;
+}
+.btn-card{
+    font-size: 2rem;
+    padding: 0.5rem;
+    border: none;
+    color: #813c23;
+    background-color: burlywood;
+    border-radius: 15px;
+}
+.btn-card:hover{
+    background-color: gainsboro;
+}
+.basic > .head_p{
+    grid-area: base;
+    background-color: ghostwhite;
+    color: gray;
+}
+.premium > .head_p{
+    grid-area: prem;
+    background-color: honeydew;
+    color: red;
+}
+.footer{
+    grid-area: foot;
+    background-color: black;
+    text-align: center;
+}
+.footer i{
+    color: white;
+    font-size: 3rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+.footer i:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+@media all and (max-width: 950px) {
+    body{
+        grid-template-areas: 
+        "head"
+        "desc"
+        "clar"
+        "feat"
+        "price"
+        "base"
+        "prem"
+        "foot"
+        ;
+    }
+    .head{
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        height: 80vh;
+        grid-template-areas: 
+        "button"
+        "btn"
+        ;
+    }
+    .container{
+        display: none;
+    }
+    .head-btn{
+        display: block;
+        grid-area: button;
+        background-color: darkkhaki;
+        color: white;
+        font-size: larger;
+        border: none;
+    }
+    .head-btn:hover{
+        background-color: lightgray;
+        color: #000;
+    }
+    .btn{
+        margin-top: 70vh;
+        margin-right: 0;
+        padding: 1rem;
+        height: 10%;
+    }
+}
